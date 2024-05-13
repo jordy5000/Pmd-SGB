@@ -6,13 +6,24 @@ import { get } from 'http';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
+  //@Get()
+  //getHello(): string {
+  //  return this.appService.getHello();
+  //}
+
+  //@Post()
+  //postHello(): string {
+  //  return this.appService.postHello();
+  //}
+
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
-  }
+  getClient(@Body()body: []): string {
+    return this.appService.getClient(body);
+  };
 
   @Post()
-  postHello(): string {
-    return this.appService.postHello();
+  postClient(@Body()body: []): string {
+    return this.appService.postClient(body);
   }
 }
+
